@@ -1,4 +1,5 @@
 var issueContainerEl = document.querySelector("#issues-container");
+var limitWarningEl = document.querySelector("#limit-warning");
 
 var getRepoIssues = function(repo) {
     console.log(repo);
@@ -57,4 +58,10 @@ var displayIssues = function(issues) {
         issueContainerEl.appendChild(issueEl);
     }
 };
-        getRepoIssues("facebook/react");
+
+    var displayWarning = function(repo) {
+        // add text to warning container
+        limitWarningEl.textContent = "To see more than 30 issues, visit ";
+    };
+
+    getRepoIssues("facebook/react");
